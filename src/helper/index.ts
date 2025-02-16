@@ -1,4 +1,4 @@
-// Mock API call to get story data
+// mock API call to get story data
 export const getStoryData = async () => {
     try {
         const response = await fetch('/storyData.json');
@@ -12,3 +12,9 @@ export const getStoryData = async () => {
         throw error;
     }
 };
+
+
+// truncate given string to 8 characters
+export const truncateText = (input: string) => {
+    return input?.length > 8 ? `${input.substring(0, 8)}...` : input;
+}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.css";
 
-import { getStoryData } from "../../helper";
+import instagramLogo from "../../assets/instagram.svg";
+
+import { getStoryData , truncateText} from "../../helper";
 
 interface Story {
     id: number;
@@ -12,13 +14,12 @@ interface User {
     id: string;
     avatar: string;
     story: Story[];
+    name: string;
 }
 
 interface DataItem {
     user: User;
 }
-
-
 
 const Story: React.FC = () => {
     const [data, setData] = useState<DataItem[]>([]);
@@ -78,7 +79,7 @@ const Story: React.FC = () => {
         const clickPosition = e.clientX - storyElement.getBoundingClientRect().left;
         const storyWidth = storyElement.offsetWidth;
 
-        if (clickPosition < storyWidth / 2) {
+        if (clickPosition > storyWidth / 2) {
             nextStory();
         } else {
             prevStory();
@@ -99,7 +100,7 @@ const Story: React.FC = () => {
     };
 
     useEffect(() => {
-        if (selectedUserIndex !== null && currentStoryIndex !== null) {            
+        if (selectedUserIndex !== null && currentStoryIndex !== null) {
             const interval = setInterval(() => {
                 nextStory();
             }, 5000);
@@ -113,41 +114,51 @@ const Story: React.FC = () => {
     }, []);
 
     return (
-        <div>
-            <div className={`${styles.storyItem} ${selectedUserIndex !== null ? styles.hidden : ""}`}>
-                {data.map((item, index) => (
-                    <div
-                        key={item.user.id}
-                        onClick={() => {
-                            handleUserIconClick(index);
-                        }}
-                    >
-                        <img src={item.user.avatar} alt="user icon" />
-                    </div>
-                ))}
+        <div className={styles.container}>
+            <div className={`${styles.header} ${selectedUserIndex !== null ? styles.hidden : ""}`}>
+                <img className={styles.instagramLogo} src={instagramLogo} alt="instagram logo" />
+                <div className={styles.userIconContainer}>
+                    {data.map((item, index) => (
+                        <div className={styles.userDetails}>
+                            <div
+                                key={item.user.id}
+                                onClick={() => {
+                                    handleUserIconClick(index);
+                                }}
+                                className={styles.userIcon}
+                            >
+                                <img src={item.user.avatar} alt="user icon" />
+                            </div>
+                            <span className={styles.userIconName}>{truncateText(item.user.name)}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            {selectedUserIndex !== null && data[selectedUserIndex]?.user?.story[currentStoryIndex!] && (
-                <div className={styles.story} onClick={handleStoryClick}>
+            {selectedUserIndex !== null && currentStoryIndex !== null && data[selectedUserIndex]?.user?.story[currentStoryIndex!] && (
+                <div className={styles.storyContainer} onClick={handleStoryClick}>
                     {/* user icon */}
-                    <div className={styles.userIcon}>
-                        <img src={data[selectedUserIndex].user.avatar} alt="avatar" />
-                    </div>
+                    <div className={styles.storyHeader}>
+                        <div className={styles.selecteduser}>
+                            <div className={styles.selecteduserIcon}>
+                                <img src={data[selectedUserIndex].user.avatar} alt="avatar" />
+                            </div>
+                            <span className={styles.selecteduserName}>{data[selectedUserIndex].user?.name}</span>
+                        </div>
 
-                    {/* close button */}
-                    <button className={styles.closeButton} onClick={(e) => closeStory(e)}>
-                        X
-                    </button>
+                        <button className={styles.closeButton} onClick={(e) => closeStory(e)}>
+                            &#x2715;
+                        </button>
+                    </div>
 
                     {/* progress bar */}
                     <div className={styles.progressBarContainer}>
                         {data[selectedUserIndex]?.user?.story.map((item, index) => (
                             <div key={item.id} className={styles.progressBar}>
                                 <div
-                                    className={`${styles.progressBarFill} ${index === currentStoryIndex ? styles.progressBarAnimation : ""}`}
-                                    style={{
-                                        width: index === currentStoryIndex ? "100%" : "0%",
-                                    }}
+                                    // className={`${styles.progressBarFill}`}
+                                    className={`${styles.progressBarFill} ${index <= currentStoryIndex ? styles.progressBarAnimation : ""}`}
+                                    style={index <= currentStoryIndex ? { width: "100%" } : { width: "0%" }}
                                 ></div>
                             </div>
                         ))}
@@ -157,6 +168,6 @@ const Story: React.FC = () => {
             )}
         </div>
     );
-}
+};
 
 export default Story;
