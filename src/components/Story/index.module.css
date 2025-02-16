@@ -1,0 +1,99 @@
+.storyItem{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    padding: 20px;
+}
+
+.story{
+    position: relative;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+.progressBarContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+
+    .progressBar {
+        flex-grow: 1;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 5px;
+        border-radius: 2px;
+        overflow: hidden;
+
+        div{
+            width: 0%;
+        }
+    }
+
+    .progressBarFill {
+        height: 100%;
+        background-color: #FFFFFF;
+        
+    }
+    .proggressBarAnimation {
+        width: 0%;
+        transition: width 5s linear;
+    }
+}
+
+
+
+
+
+.userIcon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.userIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hidden {
+    display: none;
+}

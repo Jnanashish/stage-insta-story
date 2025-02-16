@@ -1,0 +1,192 @@
+[
+    {
+        "user": {
+            "name": "Erlich Bachman",
+            "avatar": "https://i.pravatar.cc/300?u=1",
+            "id": 1,
+            "story": [
+                {
+                    "id": 1,
+                    "image": "https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Gavin Belson",
+            "avatar": "https://i.pravatar.cc/300?u=2",
+            "id": 2,
+            "story": [
+                {
+                    "id": 2,
+                    "image": "https://images.unsplash.com/photo-1739369984535-35b1ae356378?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 3,
+                    "image": "https://images.unsplash.com/photo-1739369763276-6e5c728995b7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 4,
+                    "image": "https://images.unsplash.com/photo-1739582767008-faa274e18ac2?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 5,
+                    "image": "https://images.unsplash.com/photo-1739582767532-1f817ca60549?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Jian Yang",
+            "avatar": "https://i.pravatar.cc/300?u=3",
+            "id": 3,
+            "story": [
+                {
+                    "id": 6,
+                    "image": "https://images.unsplash.com/photo-1739437455408-66aab68b5c0d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 7,
+                    "image": "https://images.unsplash.com/photo-1739193704276-01d202eed179?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 8,
+                    "image": "https://images.unsplash.com/photo-1738595634712-a008b400fb1c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 9,
+                    "image": "https://images.unsplash.com/photo-1739323924885-b68f59e7faca?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 10,
+                    "image": "https://images.unsplash.com/photo-1739372682423-ffdd0b7a8a3b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 11,
+                    "image": "https://images.unsplash.com/photo-1739104627818-d9159a7daa8d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Jared Dunn",
+            "avatar": "https://i.pravatar.cc/300?u=4",
+            "id": 4,
+            "story": [
+                {
+                    "id": 12,
+                    "image": "https://images.unsplash.com/photo-1738941316860-fa7065bd2518?q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 13,
+                    "image": "https://images.unsplash.com/photo-1738762390141-6b2fcd93f92e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 14,
+                    "image": "https://images.unsplash.com/photo-1734386011664-a17cc4ef6755?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Russ Hanneman",
+            "avatar": "https://i.pravatar.cc/300?u=5",
+            "id": 5,
+            "story": [
+                {
+                    "id": 15,
+                    "image": "https://images.unsplash.com/photo-1586768798120-95597acaa6e3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 16,
+                    "image": "https://images.unsplash.com/photo-1736614702437-58b700c2899e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Richard Hendricks",
+            "avatar": "https://i.pravatar.cc/300?u=6",
+            "id": 6,
+            "story": [
+                {
+                    "id": 17,
+                    "image": "https://images.unsplash.com/photo-1738848392298-cf0b62edc750?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Monica Hall",
+            "avatar": "https://i.pravatar.cc/300?u=7",
+            "id": 7,
+            "story": [
+                {
+                    "id": 18,
+                    "image": "https://images.unsplash.com/photo-1738395548716-522475b89043?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 19,
+                    "image": "https://images.unsplash.com/photo-1738762389610-b721d836c613?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 20,
+                    "image": "https://images.unsplash.com/photo-1738597967526-fca7534cdd5c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 21,
+                    "image": "https://images.unsplash.com/photo-1738597967815-e7141e2a0237?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Jared Dunnl",
+            "avatar": "https://i.pravatar.cc/300?u=8",
+            "id": 8,
+            "story": [
+                {
+                    "id": 22,
+                    "image": "https://images.unsplash.com/photo-1738599778390-af77d7cf10e6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Jack Barker",
+            "avatar": "https://i.pravatar.cc/300?u=9",
+            "id": 9,
+            "story": [
+                {
+                    "id": 23,
+                    "image": "https://images.unsplash.com/photo-1738762388661-f09b9b9b5df2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    },
+    {
+        "user": {
+            "name": "Carla Walton",
+            "avatar": "https://i.pravatar.cc/300?u=10",
+            "id": 10,
+            "story": [
+                {
+                    "id": 24,
+                    "image": "https://images.unsplash.com/photo-1738694114013-4a92b1851d3b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                },
+                {
+                    "id": 25,
+                    "image": "https://images.unsplash.com/photo-1722962438697-b4cae9136686?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                }
+            ]
+        }
+    }
+]

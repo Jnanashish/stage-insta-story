@@ -1,0 +1,9 @@
+.layout {
+    width: 430px;
+    height: 844px;
+
+    margin: 20px auto;
+    border: 1px solid #121212;
+    border-radius: 12px;
+    overflow: hidden;
+}
