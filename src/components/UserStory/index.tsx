@@ -30,7 +30,7 @@ const UserStory = ({ handleStoryClick, data, selectedUserIndex, currentStoryInde
             </div>
 
             {/* progress bar */}
-            <Progressbar key={`${selectedUserIndex} ${toggle}`} data={data} selectedUserIndex={selectedUserIndex} currentStoryIndex={currentStoryIndex} />
+            <Progressbar storyData={data[selectedUserIndex]?.user?.story} key={`${selectedUserIndex}${currentStoryIndex}`} currentStoryIndex={currentStoryIndex} selectedUserIndex={selectedUserIndex} />
 
             <img src={data[selectedUserIndex].user.story[currentStoryIndex!].image} alt="story" />
         </div>
