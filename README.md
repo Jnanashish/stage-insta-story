@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Instagram Stories
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Deployed URL:** [https://stage-insta-story-sandy.vercel.app/](https://stage-insta-story-sandy.vercel.app/)
 
-## Available Scripts
+A simplified version of the Instagram Stories feature.
 
-In the project directory, you can run:
+### Features
+- Horizontally scrollable list of users.
+- View any story in full-screen mode by clicking on a specific user.
+- Stories automatically advance to the next one after 5 seconds.
+- Navigate between previous or next stories by clicking on the sides of the story.
+- Progress bar on top indicating the current story index.
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Clone the repository:**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/Jnanashish/stage-insta-story 
+   ```
 
-### `npm test`
+2. **Install the dependencies:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+3. **Start the development server:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   The app will be available at [http://localhost:3000](http://localhost:3000).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## End-to-End Testing
 
-### `npm run eject`
+### To run E2E testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ```bash
+  npx cypress open
+  ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Example Test Cases
+1. Check if the stories list is visible and scrollable.
+2. Click on the first story and check if it opens.
+3. Verify that the next story opens automatically after 5 seconds.
