@@ -125,7 +125,7 @@ const Story: React.FC = () => {
     }, []);
 
     return (
-        <div className={styles.container}>
+        <div id="story-container" className={styles.container}>
             <div className={selectedUserIndex !== null ? styles.hidden : ""}>
                 <Header />
                 <Users handleUserIconClick={handleUserIconClick} data={data} truncateText={truncateText} />

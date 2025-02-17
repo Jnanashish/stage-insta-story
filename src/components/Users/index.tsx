@@ -10,9 +10,9 @@ interface UserProps {
 const Users = ({ handleUserIconClick, data, truncateText }: UserProps) => {
     return (
         <div className={styles.header}>
-            <div className={styles.userIconContainer}>
+            <div id="usersList" className={styles.userIconContainer}>
                 {data.map((item, index) => (
-                    <div className={styles.userDetails}>
+                    <div key={item.user.id} id={`user-${item.user.id}`} className={styles.userDetails}>
                         <div
                             key={item.user.id}
                             onClick={() => {

@@ -14,7 +14,7 @@ interface UserStoryProps {
 
 const UserStory = ({ handleStoryClick, data, selectedUserIndex, currentStoryIndex, closeStory, toggle }: UserStoryProps) => {
     return (
-        <div className={styles.storyContainer} onClick={handleStoryClick}>
+        <div id={`story-${data[selectedUserIndex].user.id}`} className={styles.storyContainer} onClick={handleStoryClick}>
             {/* user icon */}
             <div className={styles.storyHeader}>
                 <div className={styles.selecteduser}>

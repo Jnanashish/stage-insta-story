@@ -40,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/cypress": "^1.1.6",
+    "cypress": "^14.0.3"
   }
 }
