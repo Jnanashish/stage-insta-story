@@ -1,0 +1,36 @@
+.header {
+    padding: 0px 10px;
+    text-align: left;
+
+    .userIconContainer {
+        display: flex;
+        gap: 6px;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-top: 10px;
+
+        .userDetails {
+            span {
+                color: #000;
+                white-space: nowrap;
+                font-size: 12px;
+            }
+        }
+
+        .userIcon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(white 65%, transparent 0), linear-gradient(to top right, orange, deeppink);
+
+            img {
+                display: block;
+                height: 100%;
+                object-fit: cover;
+                clip-path: circle(42%);
+            }
+        }
+    }
+}

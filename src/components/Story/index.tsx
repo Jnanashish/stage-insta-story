@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.css";
 
-import instagramLogo from "../../assets/instagram.svg";
+import { getStoryData, truncateText } from "../../helper";
 
-import { getStoryData , truncateText} from "../../helper";
+// import components
+import Header from "../Header";
+import Users from "../Users";
+import UserStory from "../UserStory";
 
 interface Story {
     id: number;
@@ -25,7 +28,9 @@ const Story: React.FC = () => {
     const [data, setData] = useState<DataItem[]>([]);
     const [selectedUserIndex, setSelectedUserIndex] = useState<number | null>(null);
     const [currentStoryIndex, setCurrentStoryIndex] = useState<number | null>(null);
+    const [toggle, setToggle] = useState<boolean>(false);
 
+    // fetch user story data
     const fetchStoryData = async () => {
         const data: DataItem[] = await getStoryData();
         setData(data);
@@ -36,12 +41,13 @@ const Story: React.FC = () => {
         const userStories = data[selectedUserIndex!]?.user?.story;
 
         setCurrentStoryIndex((prevIndex) => {
+            // for the current user there is more story exist
             if (prevIndex !== null && userStories && prevIndex + 1 < userStories.length) {
                 return prevIndex + 1;
             } else {
+                // when stories ends for the current user, move to the next user
                 setSelectedUserIndex((userIndex) => {
                     const nextUserIndex = (userIndex! + 1) % data.length;
-                    setCurrentStoryIndex(0);
                     return nextUserIndex;
                 });
 
@@ -54,17 +60,21 @@ const Story: React.FC = () => {
     const prevStory = () => {
         setCurrentStoryIndex((prevIndex) => {
             const userStories = data[selectedUserIndex!]?.user?.story;
+            // for the current user there is more story exist
             if (prevIndex !== null && prevIndex > 0) {
+                setToggle((prev) => !prev);
                 return prevIndex - 1;
             } else {
+                // when stories ends for the current user, move to the previous user
                 setSelectedUserIndex((userIndex) => {
                     let previousUserIndex: number;
                     if (userIndex === 0) {
-                        previousUserIndex = userStories.length - 1;
+                        previousUserIndex = data.length - 1;
+                        console.log("previousUserIndex", previousUserIndex);
+                        
                     } else {
                         previousUserIndex = userIndex! - 1;
                     }
-                    setCurrentStoryIndex(0);
                     return previousUserIndex;
                 });
                 return 0;
@@ -72,13 +82,14 @@ const Story: React.FC = () => {
         });
     };
 
-    // when the user clicks on the story
+    // when the user clicks on the story move to the next or previous story
     const handleStoryClick = (e: React.MouseEvent<HTMLDivElement>) => {
         const storyElement = e.currentTarget;
         if (!storyElement) return;
         const clickPosition = e.clientX - storyElement.getBoundingClientRect().left;
         const storyWidth = storyElement.offsetWidth;
 
+        // depending on the click position move to the next or previous story
         if (clickPosition > storyWidth / 2) {
             nextStory();
         } else {
@@ -115,56 +126,13 @@ const Story: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <div className={`${styles.header} ${selectedUserIndex !== null ? styles.hidden : ""}`}>
-                <img className={styles.instagramLogo} src={instagramLogo} alt="instagram logo" />
-                <div className={styles.userIconContainer}>
-                    {data.map((item, index) => (
-                        <div className={styles.userDetails}>
-                            <div
-                                key={item.user.id}
-                                onClick={() => {
-                                    handleUserIconClick(index);
-                                }}
-                                className={styles.userIcon}
-                            >
-                                <img src={item.user.avatar} alt="user icon" />
-                            </div>
-                            <span className={styles.userIconName}>{truncateText(item.user.name)}</span>
-                        </div>
-                    ))}
-                </div>
+            <div className={selectedUserIndex !== null ? styles.hidden : ""}>
+                <Header />
+                <Users handleUserIconClick={handleUserIconClick} data={data} truncateText={truncateText} />
             </div>
 
             {selectedUserIndex !== null && currentStoryIndex !== null && data[selectedUserIndex]?.user?.story[currentStoryIndex!] && (
-                <div className={styles.storyContainer} onClick={handleStoryClick}>
-                    {/* user icon */}
-                    <div className={styles.storyHeader}>
-                        <div className={styles.selecteduser}>
-                            <div className={styles.selecteduserIcon}>
-                                <img src={data[selectedUserIndex].user.avatar} alt="avatar" />
-                            </div>
-                            <span className={styles.selecteduserName}>{data[selectedUserIndex].user?.name}</span>
-                        </div>
-
-                        <button className={styles.closeButton} onClick={(e) => closeStory(e)}>
-                            &#x2715;
-                        </button>
-                    </div>
-
-                    {/* progress bar */}
-                    <div className={styles.progressBarContainer}>
-                        {data[selectedUserIndex]?.user?.story.map((item, index) => (
-                            <div key={item.id} className={styles.progressBar}>
-                                <div
-                                    // className={`${styles.progressBarFill}`}
-                                    className={`${styles.progressBarFill} ${index <= currentStoryIndex ? styles.progressBarAnimation : ""}`}
-                                    style={index <= currentStoryIndex ? { width: "100%" } : { width: "0%" }}
-                                ></div>
-                            </div>
-                        ))}
-                    </div>
-                    <img src={data[selectedUserIndex].user.story[currentStoryIndex!].image} alt="story" />
-                </div>
+                <UserStory toggle={toggle} handleStoryClick={handleStoryClick} data={data} selectedUserIndex={selectedUserIndex} currentStoryIndex={currentStoryIndex} closeStory={closeStory} />
             )}
         </div>
     );
